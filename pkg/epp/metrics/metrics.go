@@ -718,7 +718,7 @@ func RecordNormalizedTimePerOutputToken(ctx context.Context, modelName, targetMo
 	}
 
 	if outputTokenCount <= 0 {
-		log.FromContext(ctx).Error(nil, "Output token count must be positive for NTPOT calculation",
+		log.FromContext(ctx).V(logutil.VERBOSE).Info("Output token count must be positive for NTPOT calculation",
 			"modelName", modelName, "targetModelName", targetModelName, "outputTokenCount", outputTokenCount)
 		return false
 	}
